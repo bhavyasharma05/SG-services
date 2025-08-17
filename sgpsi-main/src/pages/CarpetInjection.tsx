@@ -1,3 +1,4 @@
+// Top-level imports of CarpetInjection component
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Star, Clock, Shield, Users, Droplet, Zap, Leaf } from 'lucide-react';
@@ -140,7 +141,7 @@ const CarpetInjection = () => {
                 transition={{ duration: 1, delay: 0.3 }}
               >
                 <motion.img 
-                  src="/src/pages/injection.jpg"
+                  src={injectionImg}
                   alt="Carpet Injection & Extraction"
                   className="rounded-lg shadow-2xl w-full"
                   whileHover={{ scale: 1.05 }}
@@ -229,7 +230,7 @@ const CarpetInjection = () => {
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img 
-                    src="/src/pages/injection.jpg" 
+                    src={injectionImg} 
                     alt="Injection Extraction Process"
                     className="w-full h-full object-cover rounded-lg"
                   />

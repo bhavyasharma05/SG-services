@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { useEffect } from "react";
+// Import images
+import homeHeroImage from './OIP.PNG';
+import carpetCleaningImage from './Screenshot 2025-08-15 111603.png';
+import upholsteryImage from './upholstery-solutions-services.jpg';
 
 const Home = () => {
   useEffect(() => {
@@ -22,19 +26,19 @@ const Home = () => {
 
   const services = [
     {
-      image: '/OIP.PNG',
+      image: homeHeroImage,
       title: 'Floor Polishing',
       description:
         'Achieve a mirror-like shine with precision diamond pad polishing for long-lasting beauty.',
     },
     {
-      image: '/src/pages/Screenshot 2025-08-15 111603.png',
+      image: carpetCleaningImage,
       title: 'Carpet Cleaning',
       description:
         'Specialized cleaning to restore the beauty of all Carpet surfaces.',
     },
     {
-      image: '/src/pages/upholstery-solutions-services.jpg',
+      image: upholsteryImage,
       title: 'upholstery Cleaning',
       description:
         'Professional restoration and polishing services for all types of hard surfaces.',
@@ -142,7 +146,7 @@ const Home = () => {
               transition={{ duration: 1, delay: 0.3 }}
             >
               <motion.img 
-                src="/src/pages/OIP.PNG"
+                src={homeHeroImage}
                 alt="Business Consulting"
                 className="rounded-lg shadow-2xl"
                 whileHover={{ scale: 1.05 }}

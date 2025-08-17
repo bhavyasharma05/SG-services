@@ -8,6 +8,8 @@ import {
   Mail, 
   MapPin
 } from 'lucide-react';
+// Import logo image
+import logoImage from '../pages/Untitled_design-removebg-preview.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,7 +84,7 @@ const Navbar = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <img 
-                  src="/src/pages/Untitled_design-removebg-preview.png" 
+                  src={logoImage} 
                   alt="SG Services Logo" 
                   className="w-full h-full object-contain"
                 />

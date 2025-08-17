@@ -1,7 +1,9 @@
+// Top-level imports of UpholsteryCleaning component
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Star, Clock, Shield, Users, Sofa, Car, Square, Armchair } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import upholsteryImg from './upholstery-solutions-services.jpg';
 
 const UpholsteryCleaning = () => {
   const containerVariants = {
@@ -120,7 +122,7 @@ const UpholsteryCleaning = () => {
               transition={{ duration: 1, delay: 0.3 }}
             >
               <motion.img 
-                src="/src/pages/upholstery-solutions-services.jpg"
+                src={upholsteryImg}
                 alt="Upholstery Cleaning Service"
                 className="rounded-lg shadow-2xl w-full"
                 whileHover={{ scale: 1.05 }}

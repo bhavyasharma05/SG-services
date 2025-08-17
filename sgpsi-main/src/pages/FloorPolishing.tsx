@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, CheckCircle, Shield, Users, Sparkles, Wrench, Gem } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import oipPng from './OIP.PNG';
 
 const FloorPolishing = () => {
   const containerVariants = {

@@ -1,21 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Award,
-  Shield,
-  Clock,
-  Star,
-  Users,
-  TrendingUp,
-  CheckCircle,
-  Target,
-  Lightbulb,
-  Globe,
-  Heart,
-  Zap,
-  ArrowRight
-} from 'lucide-react';
+import { CheckCircle, Shield, Users, Clock, Star, Award, Zap, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+// Import images
+import oipJpg from '../pages/OIP.jpg';
+import oipWebp from '../pages/OIP.webp';
+import oipPng from './OIP.PNG';
 
 const WhyChooseUs = () => {
   const reasons = [
@@ -82,21 +73,21 @@ const WhyChooseUs = () => {
     {
       name: "Anil Mehta",
       position: "Hotel Manager, Grand Stay",
-      image: "/src/pages/OIP.jpg",
+      image: oipJpg,
       quote: "Our marble floors had lost their shine over the years, but after the team worked their magic, they look brand new! Guests can’t stop complimenting our lobby.",
       rating: 5
     },
     {
       name: "Sunita Verma",
       position: "Homeowner, South Delhi",
-      image: "/src/pages/OIP.webp",
+      image: oipWebp,
       quote: "They restored our granite floors to a mirror finish. Professional, on time, and the results exceeded our expectations. Worth every penny!",
       rating: 5
     },
     {
       name: "Rohit Sharma",
       position: "Restaurant Owner,Delhi",
-      image: "/src/pages/OIP.jpg",
+      image: oipJpg,
       quote: "From deep cleaning to polishing, their service was flawless. The shine has lasted for months, and it’s so much easier to maintain now.",
       rating: 4.5
     }
@@ -199,7 +190,7 @@ const WhyChooseUs = () => {
               variants={itemVariants}
             >
               <img 
-                src="/src/pages/OIP.PNG"
+                src={oipPng}
                 alt="Why Choose Us"
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
@@ -417,37 +408,168 @@ const WhyChooseUs = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-50 to-red-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Experience the SG Services Difference
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Why Choose <span className="text-red-600">S.G. Services</span>? ⭐
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Experience the perfect blend of expert housekeeping and premium floor polishing services—delivering spotless, sparkling, and truly inviting results every single time
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We bring years of expertise, modern equipment, and unmatched commitment to delivering spotless results for your home and office.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a 
-                href="/contact"
-                className="bg-red-600 text-white px-8 py-4 rounded-md hover:bg-red-700 transition-colors font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {reasons.map((reason, index) => (
+                  <motion.div
+                    key={index}
+                    className="group"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 * index }}
+                    whileHover={{ y: -5 }}
+                  >
+                    <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 h-full">
+                      <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+                        <div className="text-red-600 group-hover:text-white transition-colors">
+                          {reason.icon}
+                        </div>
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
+                        {reason.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">{reason.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={oipJpg}
+                  alt="Professional Cleaning Service"
+                  className="w-full h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">Professional Excellence</h3>
+                  <p className="text-white/90">Delivering top-quality cleaning services since our establishment</p>
+                </div>
+              </div>
+              
+              <motion.div
+                className="absolute -top-6 -right-6 bg-red-600 text-white p-4 rounded-full shadow-xl"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
+                <Star className="w-8 h-8" />
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Stats Section */}
+          <motion.div
+            className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 lg:p-12 text-white mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8 + (index * 0.1) }}
+                >
+                  <div className="text-4xl lg:text-5xl font-bold mb-2">{stat.number}</div>
+                  <div className="text-red-100 text-sm lg:text-base">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Process Section */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Proven Process 🔄</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+              We follow a systematic approach to ensure consistent, high-quality results every time
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-8 mb-16">
+            {process.map((step, index) => (
+              <motion.div
+                key={index}
+                className="text-center group"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 + (index * 0.1) }}
+                whileHover={{ y: -10 }}
+              >
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold group-hover:bg-red-700 transition-colors">
+                  {step.step}
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
+                  {step.title}
+                </h4>
+                <p className="text-gray-600 text-sm">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Final CTA */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.6 }}
+          >
+            <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
+              <div className="flex justify-center mb-6">
+                <img 
+                  src={oipWebp}
+                  alt="Quality Service Badge"
+                  className="w-24 h-24 rounded-full shadow-lg"
+                />
+              </div>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                Experience the S.G. Services Difference
+              </h3>
+              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Join hundreds of satisfied customers who trust us with their cleaning needs. 
+                Get your free quote today and see why we're the preferred choice in Singapore.
+              </p>
+              <motion.button
+                className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:bg-red-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start Your Transformation
-              </motion.a>
-              <motion.a 
-                href="/contact"
-                className="border-2 border-red-600 text-red-600 px-8 py-4 rounded-md hover:bg-red-600 hover:text-white transition-colors font-semibold transform hover:-translate-y-1"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get Free Consultation
-              </motion.a>
+                Get Your Free Quote Today! 🎯
+              </motion.button>
             </div>
           </motion.div>
         </div>
